@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+        <h5 class="pt-5" pb-5 text-center margin=auto">To Do Web App Edit Task</h5>
+        <form action="{%url 'edit_task' gettask.id%}" method="POST" style="width=500px margin=auto">
+            {% csrf_token %}
+          <div class="form-group">
+            <span style="display: flex">
+              <input
+                type="text"
+                name="task"
+                class="form-control"
+                placeholder="Add a task" value="{{gettask.task}}"
+              />
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="width: 200px"
+              >
+                <i class="fa fa-plus"></i> update
+              </button>
+            </span>
+          </div>
+        </form>
+    </div>
+  </body>
+</html>
